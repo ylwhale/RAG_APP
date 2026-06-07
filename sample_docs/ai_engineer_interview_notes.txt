@@ -1,0 +1,11 @@
+AI Engineer Interview Notes
+
+A Retrieval-Augmented Generation app, often called RAG, answers user questions by retrieving relevant information from external documents and then giving that context to a language model. The main steps are document ingestion, text extraction, chunking, embedding generation, vector similarity search, prompt construction, answer generation, and evaluation.
+
+Embeddings are numerical vector representations of text. Similar pieces of text should have nearby embeddings. In a simple RAG app, each document chunk is embedded and stored with metadata such as filename, page number, and chunk id.
+
+When a user asks a question, the app embeds the question, compares it against the stored chunk embeddings, retrieves the most similar chunks, and sends those chunks to the model as context. The model is instructed to answer only from the provided context and cite the source chunks.
+
+Common ways to reduce hallucinations include grounding the answer in retrieved context, adding citations, asking the model to say when information is missing, evaluating answers against a test set, and logging failure cases.
+
+Good future improvements include persistent vector storage, better PDF parsing, chunk reranking, user authentication, cost tracking, latency monitoring, and a larger evaluation set.
